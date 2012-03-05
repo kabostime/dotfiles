@@ -1,5 +1,5 @@
 "2.0 (created: 2009/03/28 23:48:07)
-"set "runtimepath=C:\\Users\\takashi_sakai\\vimperator"
+"set "runtimepath=$HOME\\vimperator"
 set "runtimepath=$HOME/.vimperator"
 
 vim: set ft=vimperator:
@@ -34,7 +34,6 @@ set toolbars=nomenu,navigation,addons,nobookmarks
 " ブラウザ設定
 "--------------------------------
 " ダウンロード履歴自動削除
-set! browser.download.manager.closeWhenDone=true
 set! browser.download.manager.retention=1
 "アドオンインストール
 set! security.dialog_enable_delay=0
@@ -46,10 +45,10 @@ set! dom.disable_window_move_resize=true
 " マッピング関連
 "--------------------------------
 "yで選択範囲をコピー
-"map y :echo 'Yank!' <CR> Y
-"j/kの移動量:4
-noremap j 4<C-e>
-noremap k 4<C-y>
+"map y <CR> Y
+"j/kの移動量:3
+noremap j 3<C-e>
+noremap k 3<C-y>
 "hとlでタブ移動
 map h <C-p>
 map l <C-n>
@@ -73,11 +72,6 @@ bmark -title="英辞郎" -tags=keyword -keyword=eng http://eow.alc.co.jp/%s/UTF-8
 "---------------------------------
 " feedSomeKeys設定
 "---------------------------------
-autocmd LocationChange .* :fmapc
+command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
 " LDR設定
-autocmd LocationChange ^http://reader\.livedoor\.com/reader/ :fmap j k a s o p v g
-
-"---------------------------------
-" tumblr で AutoPagerize の BASE_REMAIN_HEIGHT を3000に
-"---------------------------------
-"autocmd VimperatorEnter .* :autocmd GMInjectedScript "www\\.tumblr\\.com/dashboard" :js liberator.eval("ap.remainHeight = 3000", plugins.gmperator.currentSandbox.window.AutoPagerize.addFilter)
+lazy fmaps -u='(fastladder|livedoor)\.com/reader' j k s a p o v g

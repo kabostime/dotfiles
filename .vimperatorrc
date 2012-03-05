@@ -1,0 +1,83 @@
+"2.0 (created: 2009/03/28 23:48:07)
+"set "runtimepath=C:\\Users\\takashi_sakai\\vimperator"
+set "runtimepath=$HOME/.vimperator"
+
+vim: set ft=vimperator:
+
+
+"--------------------------------
+" 基本設定
+"--------------------------------
+"ブラウザタイトルの変更
+set titlestring=*g*
+"検索語のハイライト
+set hlsearch
+"サジェストエンジンの設定
+set suggestengines=google,url
+" :[tab]open の補完対象と順番
+set wildoptions=auto
+set complete=sl
+" リンクのURIをコマンドラインに表示
+set showstatuslinks=2
+" Beep設定
+set visualbell
+hi Bell display: none;
+" char-hints-mod の設設定
+let g:hintsio="iO"
+set hintchars=ifjklasdweuocvbnm
+set focuscontent
+
+set guioptions=smallicons,nosearchbox,menubutton,leftscrollbar,bottomscrollbar,notabnumbers
+set toolbars=nomenu,navigation,addons,nobookmarks 
+
+"--------------------------------
+" ブラウザ設定
+"--------------------------------
+" ダウンロード履歴自動削除
+set! browser.download.manager.closeWhenDone=true
+set! browser.download.manager.retention=1
+"アドオンインストール
+set! security.dialog_enable_delay=0
+"Javascriptでのウィンドウ移動・リサイズ拒否
+set! dom.disable_window_move_resize=true
+
+
+"--------------------------------
+" マッピング関連
+"--------------------------------
+"yで選択範囲をコピー
+"map y :echo 'Yank!' <CR> Y
+"j/kの移動量:4
+noremap j 4<C-e>
+noremap k 4<C-y>
+"hとlでタブ移動
+map h <C-p>
+map l <C-n>
+
+"---------------------------------
+" style
+"---------------------------------
+source $HOME/vimperator/colors/sweets.vimp
+
+"---------------------------------
+" ldrize_co
+"---------------------------------
+let g:ldrc_intelligence_bind="true"
+
+"--------------------------------
+"検索エンジン
+"--------------------------------
+" eng : 英辞郎
+bmark -title="英辞郎" -tags=keyword -keyword=eng http://eow.alc.co.jp/%s/UTF-8
+
+"---------------------------------
+" feedSomeKeys設定
+"---------------------------------
+autocmd LocationChange .* :fmapc
+" LDR設定
+autocmd LocationChange ^http://reader\.livedoor\.com/reader/ :fmap j k a s o p v g
+
+"---------------------------------
+" tumblr で AutoPagerize の BASE_REMAIN_HEIGHT を3000に
+"---------------------------------
+"autocmd VimperatorEnter .* :autocmd GMInjectedScript "www\\.tumblr\\.com/dashboard" :js liberator.eval("ap.remainHeight = 3000", plugins.gmperator.currentSandbox.window.AutoPagerize.addFilter)

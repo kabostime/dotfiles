@@ -1,14 +1,17 @@
-/*
-/.*
+*
+.*
 
-!/.bash_profile
-!/.bashrc
-!/.vimrc
-!/.vim
-!/.vimperator
-!/.gitignore
-!/.gitconfig
-!/.gitmodules
+!.bash_profile
+!.bashrc
+!.vimrc
+!.gvimrc
+!.vim
+!.vimperator
+!.vimperatorrc
+!.gitignore
+!.gitconfig
+!.gitmodules
 
-/vimperator/info/default/*
-/.vim/bundle/*
+.vimperator/info/default/*
+.vim/bundle/*
+.vim/swap/*

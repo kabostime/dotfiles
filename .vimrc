@@ -4,8 +4,11 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/vundle
-set rtp+=~/vimfiles/vundle
+if (has('win32'))
+    set rtp+=~/vimfiles/vundle
+else
+    set rtp+=~/.vim/vundle
+endif
 call vundle#rc()
 
 "github/vim-scripts
@@ -37,7 +40,11 @@ set clipboard=unnamed
 "Vi互換をオフ
 "set nocompatible
 "スワップファイル用のディレクトリ(スペースは使えないよぉ)
-set directory=C:\usr\vim\swap
+if (has('win32'))
+    set directory=$HOME/vimfiles/swap
+else
+    set directory=$HOME/.vim/swap
+endif
 set nobackup
 "インクリメンタルサーチを行う
 set incsearch

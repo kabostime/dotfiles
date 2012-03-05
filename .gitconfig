@@ -1,0 +1,13 @@
+[user]
+	name = Takashi Sakai
+	email = takashi_sakai@dwango.co.jp
+[github]
+	user = kabostime
+	token = 73d3affa61efb4e587959280178af7a7
+[color]
+	ui = auto
+[alias]
+	st = status
+[core]
+	editor = vim
+	pager = less

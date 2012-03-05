@@ -9,7 +9,6 @@
 !.vimperator
 !.vimperatorrc
 !.gitignore
-!.gitconfig
 !.gitmodules
 
 .vimperator/info/default/*

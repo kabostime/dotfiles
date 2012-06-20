@@ -40,3 +40,5 @@ alias g='git'
 alias ls='ls -la --color=auto'
 
 export EDITOR=vim
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

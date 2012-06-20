@@ -1,15 +1,14 @@
 *
 .*
 
-!.bash_profile
-!.bashrc
+!.zshrc
 !.vimrc
 !.gvimrc
 !.vim
 !.vimperator
 !.vimperatorrc
 !.gitignore
-!.gitconfig
+!.gitconfig_sample
 !.gitmodules
 
 .vimperator/info/default/*

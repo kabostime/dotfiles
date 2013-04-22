@@ -11,7 +11,10 @@
 !.gitignore
 !.gitconfig_sample
 !.gitmodules
+!modules
 !modules/*
+!scripts
+!scripts/*
 
 .vimperator/info/default/*
 .vim/bundle/*

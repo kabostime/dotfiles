@@ -13,6 +13,7 @@ call vundle#rc()
 "github/vim-scripts
 Bundle "taglist.vim"
 " Bundle "project.vim"
+"
 " other github plugins
 Bundle "Shougo/neocomplcache"
 Bundle "thinca/vim-quickrun"
@@ -112,6 +113,15 @@ au Syntax php set fdm=syntax
 
 " 開いてるファイルと同じディレクトリをカレントディレクトリに
 au BufEnter * execute ":lcd " . expand("%:p:h")
+
+"***************************
+" pig
+"***************************
+au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
+"***************************
+" ruby
+"***************************
+au BufNewFile,BufRead *.rb  set nowrap tabstop=2 shiftwidth=2
 
 
 "***************************

@@ -2,6 +2,7 @@
 .*
 
 !.zshrc
+!.zsh
 !.vimrc
 !.gvimrc
 !.vim
@@ -10,6 +11,7 @@
 !.gitignore
 !.gitconfig_sample
 !.gitmodules
+!modules/*
 
 .vimperator/info/default/*
 .vim/bundle/*

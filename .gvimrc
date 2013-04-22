@@ -3,7 +3,7 @@
 " An example for a Japanese version gvimrc file.
 " 日本語版のデフォルトGUI設定ファイル(gvimrc) - Vim7用試作
 "
-" Last Change: 06-Mar-2012.
+" Last Change: 06-Dec-2012.
 " Maintainer:  MURAOKA Taro <koron@tka.att.ne.jp>
 "
 " 解説:
@@ -187,11 +187,10 @@ endif
 colorscheme pablo
 colorscheme solarized
 
-set guifont=Ricty:h13:cSHIFTJIS
-set guifontwide=Ricty:h13:cSHIFTJIS
+set guifont=Ricty:h14
 
 gui
-set transparency=240
+set transparency=6
 
 "---------------------------------------------------------------------------
 " (java):

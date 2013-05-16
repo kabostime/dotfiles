@@ -15,6 +15,7 @@ Bundle "taglist.vim"
 " Bundle "project.vim"
 "
 " other github plugins
+Bundle 'altercation/vim-colors-solarized'
 Bundle "Shougo/neocomplcache"
 Bundle "thinca/vim-quickrun"
 
@@ -43,6 +44,13 @@ set smarttab
 set expandtab
 "ファイル内の <Tab> が対応する空白の数
 set tabstop=4
+
+"***************************
+" view
+"***************************
+syntax enable
+set background=dark
+colorscheme solarized
 
 "***************************
 " editor

@@ -13,12 +13,15 @@ do
   [ $i = ".." ] && continue
   [ $i = ".git" ] && continue
   [ $i = "README.md" ] && continue
+  [ $i = "af-magic.zsh-theme" ] && continue
+  [ $i = ".oh-my-zsh.zsh" ] && continue
   ln -s -f ~/$DOTFILES_DIR/$i ~/
 done
 
 ln -s -f ~/$DOTFILES_DIR/.zshrc ~/.oh-my-zsh/custom/my.zsh
 ln -s -f ~/$DOTFILES_DIR/.zshrc ~/my.zsh
 ln -s -f ~/$DOTFILES_DIR/.oh-my-zsh.zsh ~/.zshrc
+ln -s -f ~/$DOTFILES_DIR/af-magic.zsh-theme ~/.oh-my-zsh/themes/af-magic.zsh-theme
 
 vim -c ':BundleInstall!' -c ':q!' -c ':q!'
  

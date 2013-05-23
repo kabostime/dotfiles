@@ -20,7 +20,9 @@ HISTFILE=~/.zsh_history
 autoload -Uz compinit
 compinit
 
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+if [ `uname` = "Darwin" ]; then
+    export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+fi
 
 export TERM=xterm-256color
 
@@ -45,7 +47,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 alias g='git'
 alias ls='ls -la --color=auto'
 
-source $HOME/.zsh/env.zsh
+if [ -e $HOME/.zsh/env.zsh ]; then
+    source $HOME/.zsh/env.zsh
+fi
 
 export EC2_HOME=$HOME/Develop/ec2-api-tools
 export AWS_ELB_HOME=$HOME/Develop/ec2-elastic-load-balancing

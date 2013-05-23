@@ -48,9 +48,12 @@ set tabstop=4
 "***************************
 " view
 "***************************
+let g:solarized_termtrans=1
+set t_Co=256
 syntax enable
 set background=dark
 colorscheme solarized
+
 
 "***************************
 " editor
@@ -59,6 +62,10 @@ colorscheme solarized
 set autoindent
 "インクリメンタルサーチを行う
 set incsearch
+"検索で大文字小文字を区別しない
+set ignorecase
+"検索結果のハイライト
+set hlsearch
 "listで表示される文字のフォーマットを指定する
 set list
 set listchars=tab:>-,extends:$
@@ -141,13 +148,15 @@ set tags=tags
 
 " --- neocomplecache ---
 "起動時に有効化
+let g:acp_enableAtStartup = 0
 let g:neocomplecache_enable_at_startup = 1
 "大文字小文字の区別を無視
 let g:neocomplecache_enable_smart_case = 1
-"アンダーバーをうまい具合に
-let g:neocomplecache_enable_underbar_completion = 1
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+"アンダーバーをうまい具合に
+let g:neocomplecache_enable_underbar_completion = 1
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS

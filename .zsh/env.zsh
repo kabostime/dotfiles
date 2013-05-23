@@ -7,5 +7,3 @@ export NDK_ROOT=${ANDROID_NDK_HOME}
 
 export PATH=/usr/local/bin:$PATH:$HOME/Develop/play2.0:$HOME/bin
 export PATH=$PATH:${ANDROID_SDK_HOME}/tools:${ANDROID_SDK_HOME}/platform-tools:${ANDROID_NDK_HOME}
-
-

@@ -17,7 +17,8 @@ do
 done
 
 ln -s -f ~/$DOTFILES_DIR/.zshrc ~/.oh-my-zsh/custom/my.zsh
-ln -s -f ~/$DOTFILES_DIR/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+ln -s -f ~/$DOTFILES_DIR/.zshrc ~/my.zsh
+ln -s -f ~/$DOTFILES_DIR/.oh-my-zsh.zsh ~/.zshrc
 
 vim -c ':BundleInstall!' -c ':q!' -c ':q!'
  

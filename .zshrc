@@ -4,9 +4,9 @@ fpath=(/usr/local/share/zsh/functions ${fpath})
 
 autoload -Uz promptinit
 promptinit
-prompt adam1
 
-setopt histignorealldups sharehistory
+setopt histignorealldups
+unsetopt share_history
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -21,6 +21,8 @@ autoload -Uz compinit
 compinit
 
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+export TERM=xterm-256color
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -42,11 +44,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 alias g='git'
 alias ls='ls -la --color=auto'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOs/mvim "$@"'
 
 source $HOME/.zsh/env.zsh
-
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 
 export EC2_HOME=$HOME/Develop/ec2-api-tools
 export AWS_ELB_HOME=$HOME/Develop/ec2-elastic-load-balancing

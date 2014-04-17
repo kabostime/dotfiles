@@ -20,3 +20,5 @@
 .vimperator/info/default/*
 .vim/bundle/*
 .vim/swap/*
+
+!.vim/bundle/vundle

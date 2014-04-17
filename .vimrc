@@ -7,17 +7,18 @@ endif
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/vundle
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 "github/vim-scripts
-Bundle "taglist.vim"
+Plugin "taglist.vim"
 " Bundle "project.vim"
 "
 " other github plugins
-Bundle 'altercation/vim-colors-solarized'
-Bundle "Shougo/neocomplcache"
-Bundle "thinca/vim-quickrun"
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kchmck/vim-coffee-script'
+Plugin "Shougo/neocomplcache"
+Plugin "thinca/vim-quickrun"
 
 filetype plugin indent on
 "***************************
@@ -122,21 +123,35 @@ set swapfile
 "***************************
 "ディレクトリ閲覧時の表示をツリー形式に
 let g:netrw_liststyle=3
-" php の折りたたみ
-let php_folding=1
-au Syntax php set fdm=syntax
 
 " 開いてるファイルと同じディレクトリをカレントディレクトリに
 au BufEnter * execute ":lcd " . expand("%:p:h")
 
 "***************************
+" php
+"***************************
+" php の折りたたみ
+let php_folding=1
+au Syntax php set fdm=syntax
+
+autocmd FileType php set noet
+autocmd FileType php set tabstop=2
+autocmd FileType php set shiftwidth=2
+
+"***************************
 " pig
 "***************************
-au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
+augroup filetypedetect 
+	au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
+augroup END 
 "***************************
 " ruby
 "***************************
 au BufNewFile,BufRead *.rb  set nowrap tabstop=2 shiftwidth=2
+"***************************
+" as
+"***************************
+au BufNewFile,BufRead *.as  set filetype=actionscript
 
 
 "***************************

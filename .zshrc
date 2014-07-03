@@ -20,6 +20,7 @@ HISTFILE=~/.zsh_history
 autoload -Uz compinit
 compinit
 
+# mac initalize
 if [ `uname` = "Darwin" ]; then
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 fi
@@ -66,3 +67,19 @@ eval "$(rbenv init -)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+## PHP CLI
+if [ `uname` = "Darwin" ]; then
+  export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
+fi
+
+## tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+if [[ "$TMUX" != "" ]]; then
+  alias pbcopy="ssh 127.0.0.1 pbcopy"
+  alias launchctl="ssh 127.0.0.1 launchctl"
+fi
+
+## oh-my-zsh theme
+ZSH_THEME="af-magic"

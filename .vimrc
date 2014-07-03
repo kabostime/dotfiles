@@ -1,25 +1,35 @@
+set shell=/bin/bash
+set nocompatible
+set encoding=utf-8
+filetype off
+
 if(has('win32'))
-    set runtimepath+=$HOME\.vim
+  set rtp+=$HOME\.vim\bundle\Vundle.vim
+else
+  set rtp+=~/.vim/bundle/Vundle.vim
 endif
 "***************************
 " vundle
 "***************************
-set nocompatible
-filetype off
+call vundle#begin()
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+Plugin 'gmarik/Vundle.vim'
 
 "github/vim-scripts
-Plugin "taglist.vim"
-" Bundle "project.vim"
+Plugin 'taglist.vim'
+
 "
 " other github plugins
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kchmck/vim-coffee-script'
-Plugin "Shougo/neocomplcache"
-Plugin "thinca/vim-quickrun"
+Plugin 'neocomplcache'
+Plugin 'pig.vim'
+Plugin 'vim-quickrun'
+Plugin 'donnut/vim-php54-syntax'
 
+call vundle#end()
+syntax enable
 filetype plugin indent on
 "***************************
 " file format
@@ -27,7 +37,6 @@ filetype plugin indent on
 " internal encoding
 let &termencoding = &encoding
 set fileencodings=utf-8,cp932,euc-jp
-set encoding=utf-8
 " enable mode line (e.g. // vim: set expandtab ff=unix : )
 set modeline
 
@@ -51,7 +60,6 @@ set tabstop=4
 "***************************
 let g:solarized_termtrans=1
 set t_Co=256
-syntax enable
 set background=dark
 colorscheme solarized
 
@@ -59,8 +67,11 @@ colorscheme solarized
 "***************************
 " editor
 "***************************
+"音鳴らないようにする
+set visualbell
 "新しい行のインデントを現在行と同じにする
 set autoindent
+set smartindent
 "インクリメンタルサーチを行う
 set incsearch
 "検索で大文字小文字を区別しない
@@ -128,15 +139,21 @@ let g:netrw_liststyle=3
 au BufEnter * execute ":lcd " . expand("%:p:h")
 
 "***************************
+" coffee
+"***************************
+au BufNewFile,BufRead,BufReadPre *.coffee set filetype=coffee 
+autocmd FileType coffee setlocal noet ts=2 sw=2 sts=2
+
+"***************************
 " php
 "***************************
 " php の折りたたみ
 let php_folding=1
 au Syntax php set fdm=syntax
 
-autocmd FileType php set noet
 autocmd FileType php set tabstop=2
 autocmd FileType php set shiftwidth=2
+autocmd FileType php set noet
 
 "***************************
 " pig

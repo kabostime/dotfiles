@@ -22,7 +22,7 @@ compinit
 
 # mac initalize
 if [ `uname` = "Darwin" ]; then
-    export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+	export PATH="$(brew --prefix coreutils)/libexec/gnubin:$(brew --prefix findutils)/bin:$PATH"
 fi
 
 export TERM=xterm-256color
@@ -59,8 +59,10 @@ export PATH=$PATH:${EC2_HOME}/bin:${AWS_ELB_HOME}/bin:${AWS_AUTO_SCALING_HOME}/b
 export EC2_PRIVATE_KEY="~/.ec2/pk-amazon.pem"
 export EC2_CERT="~/.ec2/cert-amazon.pem"
 export EC2_URL="https://ec2.ap-northeast-1.amazonaws.com"
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 export EDITOR=vim
+export SHELL=/usr/local/bin/zsh
 
 export PATH="$HOME/.rbenv/bin:$HOME/Documents/scripts/AWS-Utils/bin:$PATH"
 eval "$(rbenv init -)"
@@ -80,6 +82,11 @@ if [[ "$TMUX" != "" ]]; then
   alias pbcopy="ssh 127.0.0.1 pbcopy"
   alias launchctl="ssh 127.0.0.1 launchctl"
 fi
+
+## load ssh config hosts
+function _ssh {
+  compadd `fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort`;
+}
 
 ## oh-my-zsh theme
 ZSH_THEME="af-magic"

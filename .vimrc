@@ -25,8 +25,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'neocomplcache'
 Plugin 'pig.vim'
-Plugin 'vim-quickrun'
+Plugin 'thinca/vim-quickrun'
 Plugin 'donnut/vim-php54-syntax'
+Plugin 'scrooloose/syntastic'
+Plugin 'joonty/vdebug'
+Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()
 syntax enable
@@ -46,12 +49,12 @@ set ambiwidth=double
 "***************************
 " tab
 "***************************
+" tab を スペースで代用
+set expandtab
 "シフト移動幅
 set shiftwidth=4
 "行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
 set smarttab
-" tab を スペースで代用
-set expandtab
 "ファイル内の <Tab> が対応する空白の数
 set tabstop=4
 
@@ -175,6 +178,8 @@ au BufNewFile,BufRead *.as  set filetype=actionscript
 " plugin settings
 "***************************
 "
+" --- vdebug ---
+let g:vdebug_options = {'break_on_open' : 1, 'port' : 9000, 'server' : '192.168.33.11' }
 " --- taglist ---
 set tags=tags
 
